@@ -1,0 +1,153 @@
+Using Terraform to Create a RandomID and S3 Buckets
+
+Create the Main file:-
+Create the main.tf Terraform file.
+Add a provider, aws.
+Set the region to use a variable called aws_region.
+Add a random_id resource and name it tf_bucket_id.
+Set the byte_length to 2.
+
+Add a resource, aws_s3_bucket, and name it tf_code.
+The bucket name will be set using a variable called project_name, followed by a -, and will use the dec attribute from tf_bucket_id.
+Set the acl to private.
+Set force_destroy to true.
+Create a tag with a name to tf_bucket.
+
+Create the Variables File:-
+Create the variables.tf Terraform file.
+Add a variable called aws_region.
+Set the default to us-east-1. Add a variable called project_name.
+Set the default to la-terraform.
+
+Create the outputs file:-
+Create the outputs.tf Terraform file.
+Add a output called bucketname.
+The value should be set to id, coming from tf_code.
+
+Deploy the infrastructure:-
+Initialize Terraform.
+Validate the files.
+Deploy the S3 bucket.
+
+
+****************************************************************************************************
+
+$ terraform init                                                                
+Initializing the backend...
+
+Initializing provider plugins...                                                - Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.1.0
+- Using previously-installed hashicorp/aws v3.55.0                              
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
+VinayKumar@DESKTOP-MFHQUNG MINGW64 ~/Desktop/New_folder/Terraform/Terraform/Assignment-6 (dev)
+$ terraform validate
+Success! The configuration is valid.
+
+
+VinayKumar@DESKTOP-MFHQUNG MINGW64 ~/Desktop/New_folder/Terraform/Terraform/Assignment-6 (dev)
+$ terraform plan -out s3_deploy.tfplan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+                                                                                Terraform will perform the following actions:
+
+  # aws_s3_bucket.tf_code will be created
+  + resource "aws_s3_bucket" "tf_code" {
+      + acceleration_status         = (known after apply)
+      + acl                         = "private"
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "Name" = "tf_bucket"
+        }
+      + tags_all                    = {
+          + "Name" = "tf_bucket"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + versioning {
+          + enabled    = (known after apply)
+          + mfa_delete = (known after apply)
+        }
+    }
+
+  # aws_vpc.example will be created
+  + resource "aws_vpc" "example" {
+      + arn                              = (known after apply)
+      + assign_generated_ipv6_cidr_block = false
+      + cidr_block                       = "10.0.0.0/16"
+      + default_network_acl_id           = (known after apply)
+      + default_route_table_id           = (known after apply)
+      + default_security_group_id        = (known after apply)
+      + dhcp_options_id                  = (known after apply)
+      + enable_classiclink               = (known after apply)
+      + enable_classiclink_dns_support   = (known after apply)
+      + enable_dns_hostnames             = (known after apply)
+      + enable_dns_support               = true
+      + id                               = (known after apply)
+      + instance_tenancy                 = "default"
+      + ipv6_association_id              = (known after apply)
+      + ipv6_cidr_block                  = (known after apply)
+      + main_route_table_id              = (known after apply)
+      + owner_id                         = (known after apply)
+      + tags_all                         = (known after apply)
+    }
+
+  # random_id.tf_bucket_id will be created
+  + resource "random_id" "tf_bucket_id" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 2
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + bucketname = (known after apply)
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: s3_deploy.tfplan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "s3_deploy.tfplan"
+
+VinayKumar@DESKTOP-MFHQUNG MINGW64 ~/Desktop/New_folder/Terraform/Terraform/Assignment-6 (dev)
+$ terraform apply "s3_deploy.tfplan"
+random_id.tf_bucket_id: Creating...
+random_id.tf_bucket_id: Creation complete after 0s [id=BVE]
+aws_vpc.example: Creating...
+aws_s3_bucket.tf_code: Creating...
+aws_vpc.example: Still creating... [10s elapsed]
+aws_s3_bucket.tf_code: Still creating... [10s elapsed]
+aws_vpc.example: Creation complete after 11s [id=vpc-0e556bfcf5ca5f760]
+aws_s3_bucket.tf_code: Creation complete after 17s [id=la-terraform-1361]
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bucketname = "la-terraform-1361"
+
+
