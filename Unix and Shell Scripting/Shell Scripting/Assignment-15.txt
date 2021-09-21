@@ -1,0 +1,27 @@
+Create a script that prompts the user for a number. That number is to be used to display a simple message to the terminal X number of times (where X is the number captured from the user input). The message should include an indication of the number for each count the message is displayed.
+
+
+-------------------------------------------------------------
+
+
+#! /usr/bin/bash
+read -p "Enter a number: " X
+for (( a=1; a <= $X; a++))
+do
+	echo "Hello! - $a"
+done
+
+
+output :
+
+Enter a number: 10
+Hello! - 1
+Hello! - 2
+Hello! - 3
+Hello! - 4
+Hello! - 5
+Hello! - 6
+Hello! - 7
+Hello! - 8
+Hello! - 9
+Hello! - 10

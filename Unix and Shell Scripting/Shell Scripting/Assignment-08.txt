@@ -1,0 +1,30 @@
+Create a script that interacts with the user. You will want to prompt the user to enter the following information (which you will capture and place into the following variables):
+
+FIRSTNAME
+LASTNAME
+USERAGE
+
+Greet the user with their name and current age displayed and then calculate and display their age in 10 years.
+
+
+
+----------------------------------------------------------
+
+#! /usr/bin/bash
+echo 'Enter the following - '
+read -p "FIRST_NAME: " FIRSTNAME
+read -p "LAST_NAME: " LASTNAME
+read -p "USER_AGE: " USERAGE
+echo -e "Hello! $FIRSTNAME $LASTNAME\nPresent_age is $USERAGE"
+echo "`expr $USERAGE + 10 ` will be in 10 years"
+
+output:
+
+Enter the following - 
+FIRST_NAME: vny
+LAST_NAME: mtm
+USER_AGE: 23
+Hello! vny mtm
+Present_age is 23
+33 will be in 10 years
+

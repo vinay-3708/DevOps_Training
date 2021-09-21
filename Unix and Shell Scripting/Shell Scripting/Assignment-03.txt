@@ -1,0 +1,15 @@
+Develop a script that creates, sets and displays two variables to the terminal when run. Within this script, add comments to explain what the script is doing, what each variable is and, using inline comments, what each command is doing.
+
+
+
+------------------------------------------------------+
+#! /usr/bin/bash
+# Script that creates,sets and displays the varibales
+xy=10 #creating 'xy' variable and sets with value 10.
+yz=text #creating 'yz' variable and sets with string 'text'.
+echo Hello World! #echo prints the text which is given after it.
+echo $xy $yz #prints the values of the variables.
+
+output:
+Hello World!
+10 text

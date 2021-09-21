@@ -1,0 +1,15 @@
+Write a script that will prompt the user to enter a number between 1 and 3. Capture that number in a variable and then test that variable. Be sure to display the variable and it's value as appropriate within an if/then/else statement where the final statement will display if they did not enter a number between 1 and 3 telling them they failed to follow instructions. Redirect errors from each of the tests to /dev/null (to prevent script errors from showing if text is entered for example).
+
+
+
+--------------------------------------------------------------
+
+#! /usr/bin/bash
+read -p "Enter a number between 1 to 3 :" var
+if [ $var -ge 1 ] && [ $var -le 5 ]
+then
+ echo "var=$var"
+else
+ command 2>>errors.txt
+ echo "didnt follow the instructions"
+fi

@@ -1,0 +1,30 @@
+Write a script that runs three commands:
+
+Evaluate an arithmetic expression
+Attempt to remove a file that does not exist in the current directory
+Evaluate another arithmetic expression
+
+
+Immediately after each command, echo the exit status of that command to the terminal using the appropriate variable to show success and failure exit codes.
+
+
+
+
+--------------------------------------------------------
+#! /usr/bin/bash
+echo $((10+5))
+echo $?
+rm 12345.txt
+echo $?
+echo $((10-5))
+echo $?
+
+
+output:
+
+15
+0
+rm: cannot remove '12345.txt': No such file or directory
+1
+5
+0

@@ -1,0 +1,23 @@
+Create a script to demonstrate the visibility of variables and when they are available within a script and its functions. Define a global variable, a function that defines a local variable and then display both BEFORE calling the function, call the function, then display both AFTER calling the function.
+
+
+------------------------------------------------------------------------
+
+#! /usr/bin/bash
+name=vinay #outside of functions will be global varibales which are same throughout the program until we update it
+fun()
+{
+ local name=kumar #local - is used to create local variable within this function.
+ echo "calling the function: my name is $name "
+}
+echo "BEFORE calling the function: my name is $name"
+fun
+echo "AFTER calling the function: my name is $name"
+
+
+
+output:
+
+BEFORE calling the function: my name is vinay
+calling the function: my name is kumar 
+AFTER calling the function: my name is vinay

@@ -1,0 +1,27 @@
+Write a script that evaluates and displays the following arithmetic operations:
+
+Add two numbers
+Add two numbers and multiply by a third, do not group anything 
+Add two numbers, grouped (changing order of precedence) and multiply by a third
+
+Keep in mind special characters and/or escape characters as needed.
+
+
+----------------------------------------------
+
+#! /usr/bin/bash
+a=3
+b=5
+c=4
+echo `expr $a + $b`
+echo `expr $a + $b \* $c`
+echo `expr \( $a + $b \) \* $c`
+
+
+
+output:
+
+
+8
+23
+32

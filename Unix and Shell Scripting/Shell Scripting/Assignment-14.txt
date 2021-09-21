@@ -1,0 +1,35 @@
+Develop a simple three item menu to display on the terminal. Your script, upon display of the menu, should prompt the user to choose one of the three available options. Using the 'case' statement from the course, display three unique messages depending on which number they chose, with a catch all message letting them know if they went outside the bounds of instructions.
+
+
+
+--------------------------------------------------------------
+
+
+#! /usr/bin/bash
+echo "choose any fruit below"
+read -p "APPLE KIWI BANANA :" option
+case ${option} in
+	APPLE) echo "Apple pie is quite tasty"
+	 ;;
+	BANANA) echo "I like banana nut bread."
+	 ;;
+	KIWI) echo "New Zealand is famous for kiwi."
+	 ;;
+    *) echo -e "Apple pie is quite tasty. \nI like banana nut bread \nNew Zealand is famous for kiwi."
+     ;;
+esac
+
+
+
+
+
+
+
+output:
+
+
+choose any fruit below
+APPLE KIWI BANANA :LEMON
+Apple pie is quite tasty. 
+I like banana nut bread 
+New Zealand is famous for kiwi.

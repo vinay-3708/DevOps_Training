@@ -1,0 +1,19 @@
+Write a script intended to iterate through an array called SERVERLIST containing at least four values (server names). Display all four values to the terminal when run.
+
+
+-------------------------------------------------------------------
+
+#! /usr/bin/bash
+SERVERLIST=(Apache Sun Jigsaw IIS)
+for (( x=0; x<4; x++ ))
+do
+	echo ${SERVERLIST[x]}
+done
+
+
+output:
+
+Apache
+Sun
+Jigsaw
+IIS

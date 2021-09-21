@@ -1,0 +1,65 @@
+We need to create a menu for our users. Display a menu containing three choices AND a choice to allow them to exit. Display that menu and prompt for a choice. Upon choosing the value, it should simply clear the screen and redisplay the menu (loop until the exit choice is given).
+
+HOWEVER, we need to be sure that the end user cannot use CTL-C, CTL-Z or a KILL command to terminate the application. Add a 'trap' in the script to capture those attempts and provide instructions on how to exit the script using the menu choice instead.
+
+
+
+------------------------------------------------------------------------------
+#! /usr/bin/bash
+vny()
+{
+ echo " "
+ echo "To Exit, Please select from the menu"
+ echo " Press Enter to select from the menu"
+ sleep 2
+}
+x=1
+trap vny SIGINT SIGKILL SIGTSTP
+while [ $x -eq 1 ]
+do
+    echo "choose the following with numbers: "
+    echo -e "1.Start \n2.Middle \n3.End \n4.exit "
+    read -p "Enter: " inp
+	if [ $inp -eq 4 ]
+	then
+	 x=$(( x+1 ))
+    else
+     echo $( clear )
+     sleep 2
+	fi
+done	
+exit 0
+
+
+
+
+output : 
+
+
+choose the following with numbers: 
+1.Start 
+2.Middle 
+3.End 
+4.exit 
+Enter: ^C 
+To Exit, Please select from the menu
+ Press Enter to select from the menu
+
+
+
+choose the following with numbers: 
+1.Start 
+2.Middle 
+3.End 
+4.exit 
+Enter: ^Z 
+To Exit, Please select from the menu
+ Press Enter to select from the menu
+
+
+choose the following with numbers: 
+1.Start 
+2.Middle 
+3.End 
+4.exit 
+Enter: 4

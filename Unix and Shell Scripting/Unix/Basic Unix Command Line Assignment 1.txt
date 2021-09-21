@@ -1,0 +1,161 @@
+Objective:- Assignments will help trainees to understand the basics of unix command and how to explore and use it.
+
+DO NOT copy paste commands from internet, you can take help of the Unix in-built command manual.
+
+Be Honest to yourself!
+
+Important command and option to learn unix commands:-
+man Command
+Example:-
+man ls
+
+--help Option
+Example:-
+ls --help
+
+NOTE:- Always use "man" command before using any unix commands and read about it and its options and how to use it.
+
+Assignments:-
+
+List the contents of a directory and their attributes
+
+Long list the content with file, directory ownership, permissions,sizes, etc…
+
+Display the size of the file in human readable format
+
+Show all files and folders including hidden one
+
+list directories recursively
+
+Sort the files by size with largest at the top
+
+Sort the files by last time modified displaying the newest first.
+
+Diplay the location of a program/command, where it is installed.
+
+Which command is used to switch directory from one to another
+
+List all the environment variables set for the current shell environment
+
+Did you notice something in the output of "env" command?
+
+Which command is used to print the text or any variables value in the Console/Terminal?
+
+Print the value of the env variable "PATH" on the console
+
+Is linux a case-sensitive operating system?
+
+Is, "Ls" same as "ls"?
+
+Display your currently logged in user
+
+how do you change the currrently logged in user to another user?
+
+Which command is used to leave a shell environment that you are currently logged in to?
+
+How do you reboot the system?
+
+How do you shutdown the system?
+
+Display all the major running processes in the system
+
+Understand the output of command used in above question of displaying processes, explain the meaning of each column and what data it displays?
+
+Display the name of the system kernel
+
+display the kernel release number
+
+display teh machine type of the current kernel
+
+Display the name of the operating system that the kernel is running on
+
+Display all info that uname command can show.
+
+Display the name of directory that you are currently pointing to
+
+change the current directory to another directory that you have in your system.
+
+Go up one directory
+
+Return to last directory
+
+change the current directory to home(logged in user's) directory
+
+How to check all the command used from the prompt (Command History)
+
+In which file the history of commands are stored in?
+
+How many lines of history does the system keep and from where you can change it?
+
+How can you modify bash's history behaviour
+
+Display all the commands entered so far, now, try to run a particular command from the history list without typing that command.
+
+NOTE:- TAB key is your friend when it comes to command completion and having long file and directory names autocompleted at the bash prompt for you. JUST BE LAZY AND USE TAB KEY FOR AUTO COMPLETION ;-)
+
+What are the different types of shell and where are they used and how do we use them?
+
+What is the difference between login shell and non-login shell?
+
+How do we start login shell and non-login shell?
+
+What happens when you start a login shell (which files are read and used and Why)?
+
+What happens when you start a non-login shell (Which files are read and used and Why)?
+
+What are Shell Configuration Files, why do we need it?
+
+Explain the Order of file usage from the system/user's home directory when user logs in to the System.
+
+What are Shell Variables, list major shell variables and what do they represent?
+
+How we see all our env variables?
+
+How we see all env variables in alphabical order?
+
+What Format does the env var and its values are stored?
+
+How do you create your own varible?
+
+How do you start a new bash shell?
+
+Difference between Local/Shell variables to Global Variable
+
+Making a variable accessible from other the shell in the system.
+
+Show the real life use case of exporting a variable
+
+Convert the above script file into a command, The file should run with "myappp" instead of "myapp.sh"
+
+What is Globbing? Explain in depth with examples?
+
+List all entries with extension ".sh"
+
+List all entries with numbers in it.
+
+List all entries that starts with a character and ends with a number
+
+List all entries that name length more than 5 characters
+
+What is Quoting? and Why do we need it?
+
+Write few(minimum 3) unique examples that shows, how a particular problem is solved using Quoting.
+
+How do you find a particular files/directories based on a particular search criteria?
+HINT:- look for commands -> locate, find and whereis
+
+Write major difference between locate, find and whereis?
+
+How Globbing is different from locate, find and whereis?
+
+Explain the Linux File System.
+
+Explain absolute and Relative Paths
+
+What are the different ways of creating a File in linux System? Write an example of each and the difference between them.
+
+In how many ways we can delete the files from linux system? write an example of each and teh difference between them.
+
+Archiving files using linux command, write a command to archive set of files from linux commands.
+
+Extract the archived files from the above step.

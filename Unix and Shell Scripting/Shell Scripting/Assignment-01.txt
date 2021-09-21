@@ -1,0 +1,21 @@
+Create a script that, when run, will display the following environment variables to the console:
+
+USER
+HOME
+HISTCONTROL
+TERM
+
+------------------------------------------
+#! /usr/bin/bash
+echo $USER
+echo $HOME
+echo $HISTCONTROL
+echo $TERM
+
+
+
+output :
+vny_ubuntu
+/home/vny_ubuntu
+
+xterm-256color
